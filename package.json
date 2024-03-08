@@ -2,6 +2,7 @@
   "name": "21st Century Evolution systems",
   "version": "1.0.0",
   "description": "Your app description",
+  "type":"module",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
