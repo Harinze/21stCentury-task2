@@ -8,15 +8,6 @@ const api = new WooCommerceRestApi({
 	version: "wc/v3"
 });
 
-/**
- * Get Products.
- *
- * Endpoint /api/get-products or '/api/get-products?perPage=2'
- *
- * @param req
- * @param res
- * @return {Promise<void>}
- */
 export default async function handler(req, res) {
 	
 	const responseData = {
