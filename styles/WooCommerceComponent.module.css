@@ -1,11 +1,11 @@
 .container {
-  background-color: blue;
-  color: white;
+  background-color: white;
+  color: grey;
   padding: 20px;
 }
 
 .title {
-  color: white;
+  color: grey;
 }
 
 .product {

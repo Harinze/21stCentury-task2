@@ -1,4 +1,3 @@
-
 const WooCommerce = require("@woocommerce/woocommerce-rest-api").default;
 
 const WooCommerceAPI = new WooCommerce({
