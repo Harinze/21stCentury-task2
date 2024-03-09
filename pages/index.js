@@ -37,7 +37,7 @@ const WooCommerceComponent = () => {
                   <p>ID: {product.id}</p>
                   <p>Description: {product.description}</p>
                   <p>Price: {product.price}</p>
-                  {/* Add more properties here */}
+                
                 </div>
               </li>
             ))}
