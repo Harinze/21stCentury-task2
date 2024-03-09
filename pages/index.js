@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import styles from './WooCommerceComponent.module.css';
+import styles from '../styles/WooCommerceComponent.module.css';
 
 const WooCommerceComponent = () => {
   const [responseData, setResponseData] = useState({

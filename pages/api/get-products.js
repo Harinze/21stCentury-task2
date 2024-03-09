@@ -1,37 +1,33 @@
-const WooCommerceRestApi = require("@woocommerce/woocommerce-rest-api").default;
-require('dotenv').config()
 
-const api = new WooCommerceRestApi({
-	url: process.env.STORE_URL ,
-	consumerKey: process.env.WC_CONSUMER_KEY,
-	consumerSecret: process.env.WC_CONSUMER_SECRET,
-	version: "wc/v3"
+const WooCommerce = require("@woocommerce/woocommerce-rest-api").default;
+
+const WooCommerceAPI = new WooCommerce({
+    url: process.env.STORE_URL,
+    consumerKey: process.env.WC_CONSUMER_KEY,
+    consumerSecret: process.env.WC_CONSUMER_SECRET,
+    version: "wc/v3",
 });
 
+console.log("WooCommerce API:", WooCommerceAPI);
+
 export default async function handler(req, res) {
-	
-	const responseData = {
-		success: false,
-		products: []
-	}
-	
-	const { perPage } = req?.query ?? {};
-	
-	try {
-		const { data } = await api.get(
-			'products',
-			{
-				per_page: perPage || 50
-			}
-		);
-		
-		responseData.success = true;
-		responseData.products = data;
-		
-		res.json( responseData );
-		
-	} catch ( error ) {
-		responseData.error = error.message;
-		res.status( 500 ).json( responseData  );
-	}
+    try {
+        const { perPage } = req.query;
+        const responseData = {
+            success: false,
+            products: []
+        };
+
+        const response = await WooCommerceAPI.get("products", {
+            per_page: perPage || 10
+        });
+
+        responseData.success = true;
+        responseData.products = response.data;
+
+        res.json(responseData);
+    } catch (error) {
+        console.error("Error:", error);
+        res.status(500).json({ success: false, error: "Internal Server Error" });
+    }
 }
