@@ -27,7 +27,7 @@ bun dev
 - `get-single-product`: Retrieves a single product by its ID.
 
 ## Root Route
-Upon mounting the application, the root route will display a list of products fetched from the WooCommerce store.
+When the app is up, the root route will display a list of products fetched from the WooCommerce store.
 
 ## Usage
 1. Clone the repository.
