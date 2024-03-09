@@ -1,5 +1,8 @@
 
-## Getting Started
+# 21st Century Product List
+
+## Introduction
+This is a Next.js application that interacts with a WooCommerce store to retrieve product data. When running the development server using `npm run dev`, the application will specify port `xxxx`. Other scripts work as usual.
 
 First, run the development server:
 
@@ -12,11 +15,6 @@ pnpm dev
 # or
 bun dev
 ```
-
-# My Next.js App
-
-## Introduction
-This is a Next.js application that interacts with a WooCommerce store to retrieve product data. When running the development server using `npm run dev`, the application will specify port `xxxx`. Other scripts work as usual.
 
 ## Scripts
 - `npm run dev`: Starts the development server on port xxxx.
