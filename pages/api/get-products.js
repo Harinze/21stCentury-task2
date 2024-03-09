@@ -8,7 +8,6 @@ const api = new WooCommerceRestApi({
 	version: "wc/v3"
 });
 
-
 export default async function handler(req, res) {
 	
 	const responseData = {
