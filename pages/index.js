@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import styles from './WooCommerceComponent.module.css';
 
 const WooCommerceComponent = () => {
   const [responseData, setResponseData] = useState({
@@ -25,13 +26,20 @@ const WooCommerceComponent = () => {
   }, []);
 
   return (
-    <div>
+    <div className={styles.container}>
       {responseData.success ? (
         <div>
-          <h1>Products</h1>
+          <h1 className={styles.title}>Products</h1>
           <ul>
             {responseData.products.map(product => (
-              <li key={product.id}>{product.name}</li>
+              <li key={product.id} className={styles.product}>
+                <div>
+                  <p>ID: {product.id}</p>
+                  <p>Description: {product.description}</p>
+                  <p>Price: {product.price}</p>
+                  {/* Add more properties here */}
+                </div>
+              </li>
             ))}
           </ul>
         </div>
@@ -42,4 +50,4 @@ const WooCommerceComponent = () => {
   );
 };
 
-
+export default WooCommerceComponent;
